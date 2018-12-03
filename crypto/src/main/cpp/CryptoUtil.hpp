@@ -10,7 +10,7 @@
 #endif //__cplusplus
 
 extern "C" {
-#include "Crypto.h"
+#include "CryptoUtil.h"
 }
 
 #endif //_AES_HPP_

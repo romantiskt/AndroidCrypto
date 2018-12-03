@@ -14,8 +14,11 @@ android {
         versionName rootProject.ext.versionName
         externalNativeBuild {
             cmake {
-                cppFlags ""
+                cppFlags "-std=c++11"
             }
+        }
+        ndk{
+            abiFilters 'armeabi-v7a', 'x86'
         }
     }
     buildTypes {
@@ -26,9 +29,13 @@ android {
     }
     externalNativeBuild {
         cmake {
-            path 'src/main/jni/CMakeLists.txt'
+            path 'src/main/cpp/CMakeLists.txt'
         }
     }
+    sourceSets.main {
+        jniLibs.srcDir "src/main/jniLibs"
+    }
+
 
 }
 

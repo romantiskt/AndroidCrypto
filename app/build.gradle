@@ -8,11 +8,14 @@ android {
         }
     }
     defaultConfig {
-        applicationId "com.rolan.crypto"
+        applicationId "com.rolan.sample"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
+        ndk{
+            abiFilters 'armeabi-v7a', 'x86'
+        }
     }
     buildTypes {
         release {
@@ -25,4 +28,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
+    api project(":crypto")
+
 }

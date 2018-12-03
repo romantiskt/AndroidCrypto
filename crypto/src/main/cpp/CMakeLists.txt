@@ -12,14 +12,16 @@ cmake_minimum_required(VERSION 3.4.1)
 # 指定so的生成路径
 #set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/../jniLibs/${ANDROID_ABI})
 add_library( # Sets the name of the library.
-             crypto
+             crypto-Engine
 
              # Sets the library as a shared library.
              SHARED
 
              # Provides a relative path to your source file(s).
-        Crypto.c
-        main.cpp
+             Crypto.cpp
+             CryptoUtil.c
+             Deploy.cpp
+
               )
 
 # Searches for a specified prebuilt library and stores the path as a
@@ -40,7 +42,7 @@ find_library( # Sets the name of the path variable.
 # build script, prebuilt third-party libraries, or system libraries.
 
 target_link_libraries( # Specifies the target library.
-                       crypto
+                       crypto-Engine
 
                        # Links the target library to the log library
                        # included in the NDK.
